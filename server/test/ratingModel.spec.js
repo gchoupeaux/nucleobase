@@ -12,7 +12,7 @@ describe('Rating model tests', () => {
     dbUtils.rollback(done);
   });
 
-  it('should be able to create a rating', (done) => {
+  xit('should be able to create a rating', (done) => {
     var req = httpMocks.createRequest();
     var res = httpMocks.createResponse();
 
@@ -36,7 +36,7 @@ describe('Rating model tests', () => {
     Ratings.create(req, res);
   });
 
-  it('should be able to update a rating', (done) => {
+  xit('should be able to update a rating', (done) => {
     var req = httpMocks.createRequest();
     var res = httpMocks.createResponse();
 

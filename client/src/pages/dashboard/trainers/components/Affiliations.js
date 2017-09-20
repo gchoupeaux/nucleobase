@@ -18,7 +18,8 @@ class Affiliations extends React.Component {
     this.state = {
       open: false,
       rating: 1,
-      reviewedId: 0
+      reviewedId: 0,
+      review: ''
     };
   }
 
@@ -34,7 +35,7 @@ class Affiliations extends React.Component {
       open: !this.state.open
     });
 
-    //select * from ratings where user_id=24 and trainer_id=28receiver: this.state.session.id;
+    //select * from ratings where user_id=24 and trainer_id=receiver: this.state.session.id;
     AJAX.get('/ratings', {user_id: this.props.session.id, trainer_id: this.state.reviewedId}, (data) => {
 
       if (data.length) {
@@ -65,10 +66,25 @@ class Affiliations extends React.Component {
         }, () => {});
       }
     });
+
+
+    AJAX.post('/reviews', {
+      // user_id => reviewer can be trainee or trainer
+      user_id: this.props.session.id,
+      // trainer_id => reviewee person can be a trainee or a trainer 
+      trainer_id: this.state.reviewedId, 
+      // value between 1-5
+      review: this.state.review
+    }, () => {});
+
   }
 
   onStarClick(nextValue, prevValue, name) {
     this.setState({rating: nextValue});
+  }
+
+  handleReviewChange(event) {
+    this.state.review = event.target.value;
   }
 
   render() {
@@ -113,6 +129,7 @@ class Affiliations extends React.Component {
             floatingLabelText="Your review"
             fullWidth={true}
             multiLine={true}
+            onChange={this.handleReviewChange.bind(this)}
           /><br/>
         </Dialog>
       </ListItem>
