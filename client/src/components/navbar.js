@@ -48,7 +48,7 @@ const Navbar = (props) => (
             <div>
               <Link to="/"><FlatButton label="Search" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
               <span style={{width: '30px'}}></span>
-              <Link to="/dashboard"><FlatButton label="Dashboard" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
+              <Link to="/dashboard/profile"><FlatButton label="Dashboard" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
             </div> :
             <span></span>
         }

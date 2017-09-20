@@ -15,7 +15,7 @@ router.route('/login')
     res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   })
   .post(middleware.passport.authenticate('local-login', {
-    successRedirect: '/dashboard',
+    successRedirect: '/dashboard/profile',
     failureRedirect: '/login',
     failureFlash: true
   }));
@@ -54,7 +54,7 @@ router.get('/auth/google', middleware.passport.authenticate('google', {
 }));
 
 router.get('/auth/google/callback', middleware.passport.authenticate('google', {
-  successRedirect: '/dashboard',
+  successRedirect: '/dashboard/profile',
   failureRedirect: '/login'
 }));
 
@@ -63,7 +63,7 @@ router.get('/auth/facebook', middleware.passport.authenticate('facebook', {
 }));
 
 router.get('/auth/facebook/callback', middleware.passport.authenticate('facebook', {
-  successRedirect: '/dashboard',
+  successRedirect: '/dashboard/profile',
   failureRedirect: '/login',
   failureFlash: true
 }));
@@ -71,7 +71,7 @@ router.get('/auth/facebook/callback', middleware.passport.authenticate('facebook
 router.get('/auth/twitter', middleware.passport.authenticate('twitter'));
 
 router.get('/auth/twitter/callback', middleware.passport.authenticate('twitter', {
-  successRedirect: '/dashboard',
+  successRedirect: '/dashboard/profile',
   failureRedirect: '/login'
 }));
 

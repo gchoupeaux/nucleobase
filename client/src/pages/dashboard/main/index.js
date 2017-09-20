@@ -74,6 +74,7 @@ class Main extends React.Component {
               display: 'flex',
               height: '200px'
             }}>
+              DASHBOARD
               {this.state.session.first}
             </div>
             <div className="col-lg-12 col-sm-4" style={{

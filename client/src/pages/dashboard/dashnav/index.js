@@ -35,7 +35,6 @@ class DashNav extends React.Component {
           alignItems: 'center',
           backgroundColor: '#4DC1EA'
         }}>
-          <Link to="/dashboard/"><FlatButton label="Dashboard" style={{color: 'white'}} hoverColor="#2b3c55"/></Link>
           <Link to="/dashboard/schedule"><FlatButton label="Schedule" style={{color: 'white'}} hoverColor="#2b3c55"/></Link>
           <Link to="/dashboard/trainers"><FlatButton label={this.state.sessionType === 'trainer' ? 'My Trainees' : 'My Trainers'} style={{color: 'white'}} hoverColor="#2b3c55"/></Link>
           <Link to="/dashboard/profile"><FlatButton label="Profile" style={{color: 'white'}} hoverColor="#2b3c55"/></Link>
