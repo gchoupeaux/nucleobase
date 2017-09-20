@@ -62,7 +62,7 @@ exports.seed = function (knex, Promise) {
           // array of profile id to build the join table
           profiles_ids.push(profile_id);
 
-          if (type === 'user') {
+          if (type !== 'trainer') {
             users_ids.push(profile_id);
           } else {
             // trainer by default if no type defined

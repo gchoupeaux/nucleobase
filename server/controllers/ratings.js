@@ -17,7 +17,7 @@ module.exports.create = (req, res) => {
       
       // calculate new average rating
       // new average rating = (( average rating * rating count ) + new rating) /  (rating count + 1)
-      var newAverageRating = Math.round(((profile.attributes.rating * profile.attributes.rating_count) + Number(newRating)) / (profile.attributes.rating_count + 1));
+      var newAverageRating = ((profile.attributes.rating * profile.attributes.rating_count) + Number(newRating)) / (profile.attributes.rating_count + 1);
       
       // update profile 
       req.body = {
@@ -84,7 +84,7 @@ module.exports.update = (req, res) => {
       var sum = profile.attributes.rating * profile.attributes.rating_count + (Number(newRating) - Number(oldRating));
       // calculate new average rating
       /// new average rating = (( average rating * rating count ) + (new rating - past rating)) /  (rating count)
-      var newAverageRating = Math.round( sum / profile.attributes.rating_count);
+      var newAverageRating = sum / profile.attributes.rating_count;
 
       // update profile 
       req.body = {
