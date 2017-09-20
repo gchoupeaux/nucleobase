@@ -101,7 +101,7 @@ class Create extends React.Component {
         type: this.state.type
       };
       AJAX.put('/ihateandy2', options, (result) => {
-        window.location.pathname = '/dashboard';
+        window.location.pathname = '/dashboard/profile';
       });
     }
 
