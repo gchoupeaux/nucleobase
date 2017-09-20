@@ -22,8 +22,12 @@ module.exports.logged = (req, res, next) => {
 };
 
 module.exports.profile = (req, res, next) => {
+
+  console.log('REQ 1: ');
+
   if (req.user === undefined) {
     res.redirect('/');
+
   } else if (req.user.type === null) {
     res.redirect('/signup/create');
   } else {
