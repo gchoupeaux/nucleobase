@@ -22,14 +22,24 @@ module.exports.logged = (req, res, next) => {
 };
 
 module.exports.profile = (req, res, next) => {
+
+  console.log('REQ 1: ');
+
   if (req.user === undefined) {
     res.redirect('/');
-  }
-  if (req.user.type === null || !req.user) {
-    res.redirect('/signup/create');
-  }
-  next();
 
+    console.log('REQ 2: /');
+
+  } else if (req.user.type === null) {
+    res.redirect('/signup/create');
+
+    console.log('REQ 3: /signup/create');
+
+  }
+
+  console.log('REQ 4: ');
+
+  next();
 };
 
 module.exports.session = session({
