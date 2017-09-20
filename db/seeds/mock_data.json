@@ -21,14 +21,14 @@
     },
     "auth": {
         "type":"local",
-        "password": "admin123"
+        "password": "123"
     },
     "payment": {
         "card_number":"1234 1234 1234 1234",
         "card_type": "Visa",
         "crv": "123",
         "expiration_date": "09/01/2012",
-        "name_card_holder": "Jojo"
+        "name_card_holder": "Arnold"
     },
     "bank_account": {
         "account_number":"1234567",

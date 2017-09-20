@@ -41,7 +41,7 @@ describe('Profile model tests', function () {
 
   it('Should verify that all emails are unique', function (done) {
     // Insert a user with a username that's already in existence
-    Profile.forge({ email: 'admin@domain.com' }).save()
+    Profile.forge({ email: 'arnold@gmail.com' }).save()
       .then(function (result) {
         done(new Error('was not supposed to succeed'));
       })

@@ -24,13 +24,13 @@ describe('Authentication', () => {
     it('passport passes user if email and password match', done => {
       let request = httpMocks.createRequest({
         body: {
-          email: 'admin@domain.com',
-          password: 'admin123'
+          email: 'arnold@gmail.com',
+          password: '123'
         }
       });
       request.flash = fakeFlash;
       let response = httpMocks.createResponse();
-      models.Profile.where({ email: 'admin@domain.com' }).fetch()
+      models.Profile.where({ email: 'arnold@gmail.com' }).fetch()
         .then(profile => {
           passport.authenticate('local-login', {}, (err, user, info) => {
             expect(user).to.be.an('object');
@@ -44,7 +44,7 @@ describe('Authentication', () => {
     it('passport passes false if email and password do not match', done => {
       let request = httpMocks.createRequest({
         body: {
-          email: 'admin@domain.com',
+          email: 'arnold@gmail.com',
           password: 'incorrect'
         }
       });
@@ -62,8 +62,8 @@ describe('Authentication', () => {
     it('passport passes false if email already exists', done => {
       let request = httpMocks.createRequest({
         body: {
-          email: 'admin@domain.com',
-          password: 'admin123'
+          email: 'arnold@gmail.com',
+          password: '123'
         }
       });
       request.flash = fakeFlash;
