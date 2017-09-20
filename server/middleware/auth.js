@@ -15,27 +15,6 @@ module.exports.verify = (req, res, next) => {
 };
 
 module.exports.logged = (req, res, next) => {
-  //console.log('session: ', req.session);
-  /*
-  { id: 1,
-  first: 'Guillaume Choupeaux',
-  last: 'Gui_Choupeaux',
-  display: 'Guillaume Choupeaux',
-  email: 'gchoupeaux@gmail.com',
-  phone: null,
-  created_at: 2017-09-06T03:09:04.823Z,
-  updated_at: 2017-09-06T03:09:04.823Z,
-  rating: null,
-  rating_count: null,
-  cookie: null,
-  total_view: null,
-  gyms: null,
-  avg_price: null,
-  qualification: null,
-  biography: null,
-  goals: null }
-  */
-
   if (req.isAuthenticated()) {
     return next();
   }
@@ -50,6 +29,7 @@ module.exports.profile = (req, res, next) => {
     res.redirect('/signup/create');
   }
   next();
+
 };
 
 module.exports.session = session({
