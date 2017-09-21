@@ -26,6 +26,9 @@ module.exports.profile = (req, res, next) => {
     res.redirect('/');
   } else if (req.user.type === null) {
     res.redirect('/signup/create');
+
+    console.log('REQ 3: /signup/create');
+
   }
   next();
 };
