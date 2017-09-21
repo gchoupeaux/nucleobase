@@ -33,7 +33,7 @@ const Navbar = (props) => (
         flexWrap: 'nowrap',
         overflowX: 'visible',
       }}>
-        <span style={{fontSize: '20px', color: '#f44336'}}>TRAINER FINDER</span>
+        <img src='/logo.png'></img>
       </div>
 
       <div style={{
@@ -84,3 +84,6 @@ const Navbar = (props) => (
 );
 
 export default Navbar;
+
+//<span style={{fontSize: '20px', color: '#f44336'}}> TRAINER FINDER</span>
+

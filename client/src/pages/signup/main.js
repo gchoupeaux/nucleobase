@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import FlatButton from 'material-ui/FlatButton';
 
 const Main = (props) => (
 
@@ -8,7 +9,7 @@ const Main = (props) => (
     backgroundColor: '#FFFFFF'
   }}>
 
-    <h1><span className="fa fa-sign-in"></span> Signup</h1>
+    <h1></h1>
 
     <form action="/signup" method="post">
       <div className="form-group">
@@ -20,15 +21,16 @@ const Main = (props) => (
         <input type="password" className="form-control" name="password" />
       </div>
 
-      <button type="submit" className="btn btn-warning btn-lg">Signup</button>
+
+      <FlatButton type="submit" label="Signup" style={{color: 'white'}} backgroundColor="#263238" hoverColor="#f44336" />
     </form>
 
     <hr />
     <div>
       Or signup with any of the following services:<br />
-      <a style={{marginRight: '15px'}} href="/auth/facebook">Facebook</a>
-      <a style={{marginLeft: '15px', marginRight: '15px'}} href="/auth/google">Google</a>
-      <a style={{marginLeft: '15px'}} href="/auth/twitter">Twitter</a>
+      <a style={{marginRight: '15px'}} href="/auth/facebook"><img src="social-facebook.png" style={{width: '25px', height: '25px'}}/></a>
+            <a style={{marginLeft: '15px', marginRight: '15px'}} href="/auth/google"><img src="social-google.png" style={{width: '25px', height: '25px'}}/></a>
+            <a style={{marginLeft: '15px'}} href="/auth/twitter"><img src="social-twitter.png" style={{width: '25px', height: '25px'}}/></a>
     </div>
     <hr />
 

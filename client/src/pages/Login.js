@@ -3,6 +3,7 @@ import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
+import FlatButton from 'material-ui/FlatButton';
 
 class Login extends React.Component {
   constructor(props) {
@@ -45,7 +46,7 @@ class Login extends React.Component {
           backgroundColor: '#FFFFFF'
         }}>
 
-          <h1><span className="fa fa-sign-in"></span> Login</h1>
+          <h1></h1>
 
           <form action="/login" method="post">
             <div className="form-group">
@@ -57,16 +58,16 @@ class Login extends React.Component {
               <input type="password" className="form-control" name="password" />
             </div>
 
-            <button type="submit" className="btn btn-lg" style={{backgroundColor: '#FDED01'}}>Login</button>
+            <FlatButton type="submit" label="Login" style={{color: 'white'}} backgroundColor="#263238" hoverColor="#f44336" />
           </form>
 
           <hr />
           <div >
             {/* All of these buttons will have to be re-made */}
             Or login with any of the following services:<br />
-            <a style={{marginRight: '15px'}} href="/auth/facebook">Facebook</a>
-            <a style={{marginLeft: '15px', marginRight: '15px'}} href="/auth/google">Google</a>
-            <a style={{marginLeft: '15px'}} href="/auth/twitter">Twitter</a>
+            <a style={{marginRight: '15px'}} href="/auth/facebook"><img src="social-facebook.png" style={{width: '25px', height: '25px'}}/></a>
+            <a style={{marginLeft: '15px', marginRight: '15px'}} href="/auth/google"><img src="social-google.png" style={{width: '25px', height: '25px'}}/></a>
+            <a style={{marginLeft: '15px'}} href="/auth/twitter"><img src="social-twitter.png" style={{width: '25px', height: '25px'}}/></a>
           </div>
           <hr />
 
