@@ -26,8 +26,9 @@ module.exports.profile = (req, res, next) => {
     res.redirect('/');
   } else if (req.user.type === null) {
     res.redirect('/signup/create');
+  } else {
+    return next();
   }
-  next();
 };
 
 module.exports.session = session({
