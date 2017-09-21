@@ -31,7 +31,7 @@ class Profile extends React.Component {
           margin: '0',
         }}> 
 
-          <TrainerProfile profile={this.props.profile} />
+          <TrainerProfile profile={this.props.profile} session={this.props.session}/>
 
           <Appointments profile={this.props.profile} session={this.props.session}/>
 

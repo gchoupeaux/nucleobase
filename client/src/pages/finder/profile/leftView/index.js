@@ -40,7 +40,7 @@ class TrainerProfile extends React.Component {
 
         <SplitList goals={this.props.profile.goals} gyms={this.props.profile.gyms}/>
 
-        <Buttons />
+        <Buttons profile={this.props.profile} session={this.props.session}/>
 
       </div>
 
